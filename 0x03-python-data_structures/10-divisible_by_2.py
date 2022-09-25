@@ -1,4 +1,4 @@
-#1/usr/bin/python3
+#!/usr/bin/python3
 def divisible_by_2(my_list=[]):
     a = []
     for i in range(len(my_list)):
