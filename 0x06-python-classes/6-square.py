@@ -9,7 +9,7 @@ class Square:
 
         Args:
             size: size of the new square
-            position: bkdjhf
+            position: position of the new square
         """
         self.__position = position
         self.__size = size
@@ -48,11 +48,9 @@ class Square:
             raise TypeError("position must be a tuple of 2 positive integers")
         for i in value:
             if not isinstance(i, int):
-                raise TypeError("position must be a tuple
-                                of 2 positive integers")
+                raise TypeError("position must be a tuple of 2 positive integers")
             if i < 0:
-                raise TypeError("position must be a tuple
-                                of 2 positive integers")
+                raise TypeError("position must be a tuple of 2 positive integers")
         self.__position = value
 
     def area(self):
@@ -67,6 +65,7 @@ class Square:
         """A my_print method to print a square"""
         if self.__size == 0:
             print()
+            return
         [print("") for i in range(self.__position[1])]
         for i in range(self.__size):
             print("_" * self.__position[0], end="")
