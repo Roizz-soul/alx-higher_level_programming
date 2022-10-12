@@ -2,6 +2,9 @@
 import math
 
 
+"""Define a class MagicClass"""
+
+
 class MagicClass:
     """Represents a circle"""
 
