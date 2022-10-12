@@ -14,11 +14,20 @@ class Square:
 
     @property
     def size(self):
-        """Get/set the current size of the square."""
+        """Get/set the current size of the square.
+
+        Returns:
+            the size
+        """
         return (self.__size)
 
     @size.setter
     def size(self, value):
+        """Sets the size
+
+        Args:
+            value: value of the size
+        """
         if not isinstance(value, int):
             raise TypeError("size must be an integer")
         elif value < 0:
@@ -27,11 +36,20 @@ class Square:
 
     @property
     def position(self):
-        """Get/set the current position of the square."""
+        """Get/set the current position of the square.
+
+        Returns:
+            the position
+        """
         return (self.__position)
 
     @position.setter
     def position(self, value):
+        """sets the position
+
+        Args:
+            value: value of the position
+        """
         if (not isinstance(value, tuple) or
                 len(value) != 2 or
                 not all(isinstance(num, int) for num in value) or
@@ -40,11 +58,19 @@ class Square:
         self.__position = value
 
     def area(self):
-        """Return the current area of the square."""
+        """Return the current area of the square.
+
+        Returns:
+            area
+        """
         return (self.__size * self.__size)
 
     def my_print(self):
-        """Print the square with the # character."""
+        """Print the square with the # character.
+
+        Returns:
+            nothng
+        """
         if self.__size == 0:
             print("")
             return
@@ -56,7 +82,11 @@ class Square:
             print("")
 
     def __str__(self):
-        """Define the print() representation of a Square."""
+        """Define the print() representation of a Square.
+
+        Returns:
+            newline
+        """
         if self.__size != 0:
             [print("") for i in range(0, self.__position[1])]
         for i in range(0, self.__size):

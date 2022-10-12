@@ -12,11 +12,20 @@ class Square:
 
     @property
     def size(self):
-        """Get/set the current size of the square."""
+        """Get/set the current size of the square.
+
+        Returns:
+            size
+        """
         return (self.__size)
 
     @size.setter
     def size(self, value):
+        """ sets the size
+
+        Args:
+            value: value of the size
+        """
         if not isinstance(value, int):
             raise TypeError("size must be an integer")
         elif value < 0:
@@ -24,29 +33,56 @@ class Square:
         self.__size = value
 
     def area(self):
-        """Return the current area of the square."""
+        """Return the current area of the square.
+
+        Returns:
+            the area"""
         return (self.__size * self.__size)
 
     def __eq__(self, other):
-        """Define the == comparision to a Square."""
+        """Define the == comparision to a Square.
+
+        Returns:
+            check code
+        """
         return self.area() == other.area()
 
     def __ne__(self, other):
-        """Define the != comparison to a Square."""
+        """Define the != comparison to a Square.
+
+        Returns:
+            check code
+        """
         return self.area() != other.area()
 
     def __lt__(self, other):
-        """Define the < comparison to a Square."""
+        """Define the < comparison to a Square.
+
+        Returns:
+            check code
+        """
         return self.area() < other.area()
 
     def __le__(self, other):
-        """Define the <= comparison to a Square."""
+        """Define the <= comparison to a Square.
+
+        Returns:
+            check code
+        """
         return self.area() <= other.area()
 
     def __gt__(self, other):
-        """Define the > comparison to a Square."""
+        """Define the > comparison to a Square.
+
+        Returns:
+            check code
+        """
         return self.area() > other.area()
 
     def __ge__(self, other):
-        """Define the >= compmarison to a Square."""
+        """Define the >= compmarison to a Square.
+
+        Returns:
+            check code
+        """
         return self.area() >= other.area()
