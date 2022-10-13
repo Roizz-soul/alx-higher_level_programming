@@ -1,7 +1,7 @@
 #!/usr/bin/python3
 
 
-Import sys
+import sys
 
 
 def safe_print_integer_err(value):
