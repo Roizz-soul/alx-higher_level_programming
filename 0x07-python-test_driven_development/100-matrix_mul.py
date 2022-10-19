@@ -1,6 +1,5 @@
 #!/usr/bin/python3
-"""Defines A function to multiply matrices
-"""
+"""Defines A function to multiply matrices"""
 
 
 def matrix_mul(m_a, m_b):
@@ -31,9 +30,9 @@ def matrix_mul(m_a, m_b):
     if type(elems) not in [int, float] for elems in [tow for tow in m_b]:
         raise TypeError("m_b should contain only integers or floats")
 
-    if not all(len(row) == len(m_a[0]) for row in m_a:
+    if not all(len(row) == len(m_a[0])) for row in m_a:
         raise TypeError("each row of m_a must should be of the same size")
-    if not all(len(tow) == len(m_b[0]) for tow in m_b:
+    if not all(len(tow) == len(m_b[0])) for tow in m_b:
         raise TypeError("each row of m_b must should be of the same size")
 
     if len(m_a[0]) != len(m_b):
@@ -42,7 +41,7 @@ def matrix_mul(m_a, m_b):
     result = []
     new_row = []
     inverted_b = []
-    for r in range(len(m_b[0]):
+    for r in range(len(m_b[0])):
         new_row = []
         for c in range(len(m_b)):
             new_row.append(m_b[c][r])
@@ -58,4 +57,3 @@ def matrix_mul(m_a, m_b):
         result.append(new_row)
 
     return result
-            
