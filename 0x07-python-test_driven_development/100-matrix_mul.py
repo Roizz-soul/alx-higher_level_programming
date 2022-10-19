@@ -15,9 +15,9 @@ def matrix_mul(m_a, m_b):
     if not isinstance(m_b, list):
         raise TypeError("m_b must be a list")
 
-    if not isinstance(row, list) for row in m_a:
+    if not all(isinstance(row, list) for row in m_a):
         raise TypeError("m_a must be a list")
-    if not isinstance(tow, list) for tow in m_b:
+    if not all(isinstance(tow, list) for tow in m_b):
         raise TypeError("m_b must be a list")
 
     if m_a == [] or m_a == [[]]:
@@ -25,14 +25,16 @@ def matrix_mul(m_a, m_b):
     if m_b == [] or m_b == [[]]:
         raise ValueError("m_b can't be empty")
 
-    if type(elem) not in [int, float] for elem in [row for row in m_a]:
+    if not all((isinstance(ele, int) or isinstance(ele, float))
+            for ele in [num for row in m_a for num in row]):
         raise TypeError("m_a should contain only integers or floats")
-    if type(elems) not in [int, float] for elems in [tow for tow in m_b]:
+    if not all((isinstance(elem, int) or isinstance(elem, float))
+            for elem in [num for row in m_a for num in row]):
         raise TypeError("m_b should contain only integers or floats")
 
-    if not all(len(row) == len(m_a[0])) for row in m_a:
+    if not all(len(row) == len(m_a[0]) for row in m_a):
         raise TypeError("each row of m_a must should be of the same size")
-    if not all(len(tow) == len(m_b[0])) for tow in m_b:
+    if not all(len(tow) == len(m_b[0]) for tow in m_b):
         raise TypeError("each row of m_b must should be of the same size")
 
     if len(m_a[0]) != len(m_b):
@@ -51,8 +53,8 @@ def matrix_mul(m_a, m_b):
         new_row = []
         for el in inverted_b:
             prod = 0
-            for i in ranger(len(inverted_b[0])):
-                prod += row[i] * col[i]
+            for i in range(len(inverted_b[0])):
+                prod += row[i] * el[i]
             new_row.append(prod)
         result.append(new_row)
 
