@@ -41,7 +41,6 @@ def matrix_mul(m_a, m_b):
         raise ValueError("m_a and m_b can't be multiplied")
 
     result = []
-    new_row = []
     inverted_b = []
     for r in range(len(m_b[0])):
         new_row = []
