@@ -18,3 +18,4 @@ def text_indentation(text):
         if i in ".?:":
             b = 1
             print()
+            print()
