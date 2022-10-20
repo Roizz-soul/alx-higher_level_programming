@@ -79,7 +79,7 @@ class Rectangle:
             return ((self.__height + self.__width) * 2)
 
     @staticmethod
-    def bigger_or_equal(rec_1, rect_2):
+    def bigger_or_equal(rect_1, rect_2):
         """Checks which area is bigger
         Args:
             rect_1: first rectangle
