@@ -3,13 +3,21 @@
 
 
 class Rectangle:
-    """Rectangle with height and width class"""
+    """Rectangle with height and width class
+    Attributes:
+        number_of_instances: counts objects made
+        print_symbol: #
+    """
+    number_of_instances = 0
+    print_symbol = "#"
+
     def __init__(self, width=0, height=0):
         """ initialization method
         Args:
             width: width of rectangle (int)
             height: height of rectangle (int)
         """
+        type(self).number_of_instances += 1
         self.width = width
         self.height = height
 
@@ -81,7 +89,21 @@ class Rectangle:
 
         rect = []
         for i in range(self.__height):
-            [rect.append('#') for j in range(self.__width)]
+            [rect.append(self.print_symbol) for j in range(self.__width)]
             if i != self.height - 1:
                 rect.append("\n")
             return ("".join(rect))
+
+    def __repr__(self):
+        """representing a string
+        Returns:
+            a string
+        """
+        ans = "Rectangle(" + str(self.__width) + ", "
+        ans += str(self.__height) + ")"
+        return ans
+
+    def __del__(self):
+        """deletes an instance"""
+        type(self).number_of_instances -= 1
+        print("Bye rectangle...")

@@ -3,13 +3,21 @@
 
 
 class Rectangle:
-    """Rectangle with height and width class"""
+    """Rectangle with height and width class
+    Attributes:
+        number_of_instances: counts objects made
+        print_symbol: #
+    """
+    number_of_instances = 0
+    print_symbol = "#"
+
     def __init__(self, width=0, height=0):
         """ initialization method
         Args:
             width: width of rectangle (int)
             height: height of rectangle (int)
         """
+        type(self).number_of_instances += 1
         self.width = width
         self.height = height
 
@@ -70,6 +78,33 @@ class Rectangle:
         else:
             return ((self.__height + self.__width) * 2)
 
+    @staticmethod
+    def bigger_or_equal(rec_1, rect_2):
+        """Checks which area is bigger
+        Args:
+            rect_1: first rectangle
+            rect_2: second rectangle
+        Returns:
+            Bigger rectangle
+        """
+        if not isinstance(rect_1, Rectangle):
+            raise TypeError("rect_1 must be an instance of Rectangle")
+        if not isinstance(rect_2, Rectangle):
+            raise TypeError("rect_2 must be an instance of Rectangle")
+        if rect_2.area() > rect_1.area():
+            return rect_2
+        return rect_1
+
+    @classmethod
+    def square(cls, size=0):
+        """A new rectangle == square
+        Args:
+            size: new size of square
+        Returns:
+            the rectangle class
+        """
+        return cls(size, size)
+
     def __str__(self):
         """string value
         Returns:
@@ -81,7 +116,21 @@ class Rectangle:
 
         rect = []
         for i in range(self.__height):
-            [rect.append('#') for j in range(self.__width)]
+            [rect.append(self.print_symbol) for j in range(self.__width)]
             if i != self.height - 1:
                 rect.append("\n")
             return ("".join(rect))
+
+    def __repr__(self):
+        """representing a string
+        Returns:
+            a string
+        """
+        ans = "Rectangle(" + str(self.__width) + ", "
+        ans += str(self.__height) + ")"
+        return ans
+
+    def __del__(self):
+        """deletes an instance"""
+        type(self).number_of_instances -= 1
+        print("Bye rectangle...")
