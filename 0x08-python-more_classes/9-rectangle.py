@@ -119,7 +119,7 @@ class Rectangle:
             [rect.append(self.print_symbol) for j in range(self.__width)]
             if i != self.__height - 1:
                 rect.append("\n")
-            return ("".join(rect))
+        return ("".join(rect))
 
     def __repr__(self):
         """representing a string
