@@ -1,5 +1,5 @@
 #!/usr/bin/python3
-"""Function for listing out available attributes and methods 
+"""Function for listing out available attributes and methods
     of an instance"""
 
 
