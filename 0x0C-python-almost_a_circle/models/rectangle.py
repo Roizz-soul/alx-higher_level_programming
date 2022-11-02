@@ -19,7 +19,7 @@ class Rectangle(Base):
         for i in [width, height, x, y]:
             if type(i) != int:
                 raise TypeError("{} must be an integer".format(words[j]))
-            j +=1
+            j += 1
 
         j = 0
         for c in [width, height]:
@@ -84,7 +84,7 @@ class Rectangle(Base):
         if type(value) != int:
             raise TypeError("x must be an integer")
         if value < 0:
-            raise ValueError("y must be >= 0")
+            raise ValueError("x must be >= 0")
         self.__x = value
 
     @property
@@ -99,7 +99,7 @@ class Rectangle(Base):
     def y(self, value):
         """ y setter"""
         if type(value) != int:
-            raise TypeError("x must be an integer")
+            raise TypeError("y must be an integer")
         if value < 0:
             raise ValueError("y must be >= 0")
         self.__y = value
