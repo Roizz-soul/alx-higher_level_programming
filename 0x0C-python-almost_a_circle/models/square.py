@@ -48,7 +48,7 @@ class Square(Rectangle):
                     else:
                         self.id = arg
                 elif a == 1:
-                    self.width = arg
+                    self.size = arg
                 elif a == 2:
                     self.x = arg
                 elif a == 3:
@@ -62,7 +62,7 @@ class Square(Rectangle):
                     else:
                         self.id = v
                 elif k == "size":
-                    self.width = v
+                    self.size = v
                 elif k == "x":
                     self.x = v
                 elif k == "y":
@@ -71,7 +71,7 @@ class Square(Rectangle):
     def to_dictionary(self):
         """Returns dictionary representation fo the instance"""
         return {'id': self.id,
-                'size': self.size
+                'size': self.width
                 'x': self.x,
                 'y': self.y}
 
