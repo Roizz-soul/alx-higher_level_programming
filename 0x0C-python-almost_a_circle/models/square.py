@@ -68,17 +68,17 @@ class Square(Rectangle):
                 elif k == "y":
                     self.y = v
 
-    def to_dictionary(self):
-        """dictionary representation fo the instance
+    """def to_dictionary(self):
+        dictionary representation of the instance
         Returns:
             A Dictionary
-        """
+        hj
         return {
                 'id': self.id,
                 'size': self.width
                 'x': self.x,
                 'y': self.y
-        }
+        }"""
 
     def __str__(self):
         """the string method
