@@ -69,11 +69,16 @@ class Square(Rectangle):
                     self.y = v
 
     def to_dictionary(self):
-        """Returns dictionary representation fo the instance"""
-        return {'id': self.id,
+        """dictionary representation fo the instance
+        Returns:
+            A Dictionary
+        """
+        return {
+                'id': self.id,
                 'size': self.width
                 'x': self.x,
-                'y': self.y}
+                'y': self.y
+        }
 
     def __str__(self):
         """the string method
