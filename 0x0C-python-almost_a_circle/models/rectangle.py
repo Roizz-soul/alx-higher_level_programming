@@ -1,6 +1,6 @@
 #!/usr/bin/python3
 """ A class called Rectangle that inherits from the Base class"""
-from models.base import Base
+from base import Base
 
 
 class Rectangle(Base):
@@ -14,6 +14,22 @@ class Rectangle(Base):
             y: vertical position
             id: identity
         """
+        words = ["width", "height", "x", "y"]
+        j = 0
+        for i in [width, height, x, y]:
+            if type(i) != int:
+                raise TypeError("{} must be an integer".format(words[j]))
+            j +=1
+
+        j = 0
+        for c in [width, height]:
+            if c <= 0:
+                raise ValueError("{} must be > 0".format(words[j]))
+            j += 1
+        for b in [x, y]:
+            if b < 0:
+                raise ValueError("{} must be > 0".format(words[j]))
+            j += 1
         self.width = width
         self.height = height
         self.x = x
