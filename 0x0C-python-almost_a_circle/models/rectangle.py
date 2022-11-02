@@ -112,11 +112,11 @@ class Rectangle(Base):
         return self.__width * self.__height
 
     def display(self):
-        """Display s a # rectangle"""
+        """prints a display of a # rectangle"""
         for l in range(self.__y):
             print()
 
-        for i in range(self.__height):
+        for r in range(self.__height):
             print(" " * self.__x, end="")
             print("#" * self.__width)
 
