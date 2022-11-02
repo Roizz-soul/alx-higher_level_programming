@@ -113,6 +113,7 @@ class Rectangle(Base):
 
     def display(self):
         """prints a display of a # rectangle"""
+
         for l in range(self.__y):
             print()
 
