@@ -21,15 +21,15 @@ class Rectangle(Base):
                 raise TypeError("{} must be an integer".format(words[j]))
             j += 1
 
-        j = 0
+        t = 0
         for c in [width, height]:
             if c <= 0:
-                raise ValueError("{} must be > 0".format(words[j]))
-            j += 1
+                raise ValueError("{} must be > 0".format(words[t]))
+            t += 1
         for b in [x, y]:
             if b < 0:
-                raise ValueError("{} must be > 0".format(words[j]))
-            j += 1
+                raise ValueError("{} must be >= 0".format(words[t]))
+            t += 1
         self.width = width
         self.height = height
         self.x = x
