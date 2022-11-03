@@ -60,3 +60,19 @@ class Base:
             return []
         else:
             return json.loads(json_string)
+
+    @classmethod
+    def create(cls, **dictionary):
+        """create a dictionary
+        Args:
+            **dictionary: key-value pairs of a dictionary
+        Returns:
+            An instance with all the set attributes
+        """
+        if dictionary and dictionary != {}:
+            if cls.__name__ = "Rectangle":
+                new = cls(1, 1)
+            else:
+                new = cls(1)
+            new.update(**dictionary)
+            return new
