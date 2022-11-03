@@ -70,7 +70,7 @@ class Base:
             An instance with all the set attributes
         """
         if dictionary and dictionary != {}:
-            if cls.__name__ = "Rectangle":
+            if cls.__name__ == "Rectangle":
                 new = cls(1, 1)
             else:
                 new = cls(1)
