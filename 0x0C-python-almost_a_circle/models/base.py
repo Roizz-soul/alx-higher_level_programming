@@ -3,6 +3,7 @@
 import json
 
 
+
 class Base:
     """Base class with no args
     Attributes:
@@ -35,15 +36,15 @@ class Base:
             return json.dumps(list_dictionaries)
 
     @classmethod
-    def save_to file(cls, list_objs):
+    def save_to_file(cls, list_objs):
         """javascript object notation
         Args:
             list_objs: list of instances
         """
         filename = cls.__name__ + ".json"
-        with open(filename, "w") as jsonfile:
+        with open(filename, "w") as f:
             if list_objs is None:
-                jsonfile.write("[]")
+                f.write("[]")
             else:
                 list_dicts = [o.to_dictionary() for o in list_objs]
-                jsonfile.write(Base.to_json_string(list_dicts))
+                f.write(Base.to_json_string(list_dicts))
