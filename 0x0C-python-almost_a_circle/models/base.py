@@ -3,7 +3,6 @@
 import json
 
 
-
 class Base:
     """Base class with no args
     Attributes:
