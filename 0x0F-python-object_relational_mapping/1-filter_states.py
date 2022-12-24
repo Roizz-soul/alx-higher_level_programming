@@ -13,7 +13,7 @@ if __name__ == "__main__":
             db=sys.argv[3],
             charset="utf8")
     cur = db.cursor()
-    cur.execute("SELECT * FROM states WHERE states.name LIKE 'N%'\
+    cur.execute("SELECT * FROM states WHERE states.name LIKE BINARY 'N%'\
                 ORDER BY states.id ASC")
     for i in cur.fetchall():
         print(i)
