@@ -12,10 +12,10 @@ if __name__ == "__main__":
             passwd=sys.argv[2],
             db=sys.argv[3],
             charset="utf8")
-    sql = "SELECT * FROM states WHERE states.name='{}'\
-           ORDER BY states.id ASC"
+	sql = "SELECT * FROM states WHERE states.name='{}'\
+           ORDER BY states.id ASC".format(sys.argv[4])
     cur = db.cursor()
-    cur.execute(sql.format(sys.argv[4]))
+    cur.execute(sql)
     for i in cur.fetchall():
         print(i)
     cur.close()
