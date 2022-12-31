@@ -1,9 +1,12 @@
 #!/usr/bin/python3
+# Defines a state model
 """module defines a class called State"""
+
 from sqlalchemy import Column, Intger, String
 from sqlalchemy.ext.declarative import declarative_base
 
 Base = declarative_base()
+
 
 
 class State(Base):
