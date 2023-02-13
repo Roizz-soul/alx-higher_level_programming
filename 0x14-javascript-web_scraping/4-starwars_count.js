@@ -10,7 +10,7 @@ request(process.argv[2], function (err, response, body) {
   let j = 0;
   for (let x = 0; lst[x]; x++) {
     for (let i = 0; lst[x].characters[i]; i++) {
-      if (lst[x].characters[i] === 'https://swapi-api.alx-tools.com/api/people/18/') {
+      if (lst[x].characters[i].endsWith('/18/')) {
         j++;
       }
     }
