@@ -1,2 +1,2 @@
-# Javascript Objects, Scopes and Closures
-Here I'll be learning all about javascript objects, scopes and closures and how to apply them
+# JavaScript -  Objects, Scopes and Closures
+Here I'll be learning more on Javascript syntax, and objects and how to create nore functions
