@@ -12,11 +12,15 @@ if __name__ == "__main__":
             passwd=sys.argv[2],
             db=sys.argv[3],
             charset="utf8")
-    sql = "SELECT * FROM states WHERE states.name LIKE BINARY '{}'\
-           ORDER BY states.id ASC".format(sys.argv[4])
+    sql = "SELECT cities.name\
+           FROM cities JOIN states\
+           WHERE cities.state_id = states.id AND states.name=%s\
+           ORDER BY cities.id ASC"
     cur = db.cursor()
-    cur.execute(sql)
-    for c in cur.fetchall():
-        print(c)
+    cur.execute(sql, (sys.argv[4],))
+    cit = []
+    for i in cur.fetchall():
+        cit.append(i[0])
+    print(", ".join(cit))
     cur.close()
     db.close()

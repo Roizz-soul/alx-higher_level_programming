@@ -12,11 +12,11 @@ if __name__ == "__main__":
             passwd=sys.argv[2],
             db=sys.argv[3],
             charset="utf8")
-    sql = "SELECT * FROM states WHERE states.name LIKE BINARY '{}'\
-           ORDER BY states.id ASC".format(sys.argv[4])
+    sql = "SELECT * FROM states WHERE states.name=%s\
+           ORDER BY states.id ASC"
     cur = db.cursor()
-    cur.execute(sql)
-    for c in cur.fetchall():
-        print(c)
+    cur.execute(sql, (sys.argv[4],))
+    for i in cur.fetchall():
+        print(i)
     cur.close()
     db.close()

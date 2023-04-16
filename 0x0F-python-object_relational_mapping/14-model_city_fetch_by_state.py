@@ -1,5 +1,5 @@
 #!/usr/bin/python3
-"""Script that lists all objects from a database"""
+"""Script that lists all objects from a database at once"""
 import sys
 from sqlalchemy import create_engine
 from sqlalchemy.orm import sessionmaker
@@ -13,8 +13,8 @@ if __name__ == "__main__":
     Base.metadata.create_all(engine)
     Session = sessionmaker(bind=engine)
     session = Session()
-    result = session.query(City, State).filter(City.state_id == State.id).\
+    res = session.query(City, State).filter(City.state_id == State.id).\
         order_by(City.id).all()
-    for city, state in result:
+    for city, state in res:
         print("{}: ({}) {}".format(state.name, city.id, city.name))
     session.close()

@@ -1,5 +1,5 @@
 #!/usr/bin/python3
-"""Script that lists all objects from a database"""
+"""Script that lists all objects from a database at once"""
 import sys
 from sqlalchemy import create_engine
 from sqlalchemy.orm import sessionmaker
@@ -13,7 +13,7 @@ if __name__ == "__main__":
     Base.metadata.create_all(engine)
     Session = sessionmaker(bind=engine)
     session = Session()
-    new_row2 = City(name='San Francisco', state=State(name='California'))
-    session.add(new_row2)
+    n_row2 = City(name='San Francisco', state=State(name='California'))
+    session.add(n_row2)
     session.commit()
     session.close()

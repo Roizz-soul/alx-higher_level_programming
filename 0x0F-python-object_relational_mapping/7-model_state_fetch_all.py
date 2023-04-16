@@ -1,5 +1,5 @@
 #!/usr/bin/python3
-"""Script that lists all objects from a database"""
+"""Script that lists all objects from a databaseat once"""
 import sys
 from sqlalchemy import create_engine
 from sqlalchemy.orm import sessionmaker

@@ -16,7 +16,7 @@ if __name__ == "__main__":
            ORDER BY states.id ASC".format(sys.argv[4])
     cur = db.cursor()
     cur.execute(sql)
-    for c in cur.fetchall():
-        print(c)
+    for i in cur.fetchall():
+        print(i)
     cur.close()
     db.close()

@@ -17,7 +17,7 @@ if __name__ == "__main__":
                  FROM cities JOIN states\
                  WHERE cities.state_id = states.id\
                  ORDER BY cities.id ASC")
-    for i in cur.fetchall():
-        print(i)
+    for c in cur.fetchall():
+        print(c)
     cur.close()
     db.close()

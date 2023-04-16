@@ -18,9 +18,9 @@ if __name__ == "__main__":
            ORDER BY cities.id ASC"
     cur = db.cursor()
     cur.execute(sql, (sys.argv[4],))
-    cit = []
-    for i in cur.fetchall():
-        cit.append(i[0])
-    print(", ".join(cit))
+    lit = []
+    for c in cur.fetchall():
+        cit.append(c[0])
+    print(", ".join(lit))
     cur.close()
     db.close()

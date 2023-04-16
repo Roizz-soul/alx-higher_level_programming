@@ -15,9 +15,9 @@ if __name__ == "__main__":
     new_row = State(name='Louisiana')
     session.add(new_row)
     session.commit()
-    result = session.query(State).filter(State.name == 'Louisiana').all()
-    if result:
-        for i in result:
+    res = session.query(State).filter(State.name == 'Louisiana').all()
+    if res:
+        for i in res:
             print(i.id)
     else:
         print("Not found")
